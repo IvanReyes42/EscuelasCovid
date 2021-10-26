@@ -4,3 +4,9 @@ C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\ExamenParcial1\ConexionEscue
 C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.dll
 C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.pdb
 C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.csprojAssemblyReference.cache
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\bin\Debug\ConexionEscuela.dll
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\bin\Debug\ConexionEscuela.pdb
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.csproj.AssemblyReference.cache
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.csproj.CoreCompileInputs.cache
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.dll
+C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\ConexionEscuela\obj\Debug\ConexionEscuela.pdb

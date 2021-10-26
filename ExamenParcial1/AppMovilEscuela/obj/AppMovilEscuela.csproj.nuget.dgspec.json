@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj": {}
+    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj": {
+    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj",
         "projectName": "AppMovilEscuela",
-        "projectPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj",
+        "projectPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\AppMovilEscuela\\AppMovilEscuela.csproj",
         "packagesPath": "C:\\Users\\Ivan Reyes Ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\AppMovilEscuela\\obj\\",
+        "outputPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\AppMovilEscuela\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -41,6 +41,10 @@
             "ServiceStack.Text": {
               "target": "Package",
               "version": "[5.12.0, )"
+            },
+            "System.Collections.NonGeneric": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             },
             "Xamarin.Android.Support.Constraint.Layout": {
               "target": "Package",

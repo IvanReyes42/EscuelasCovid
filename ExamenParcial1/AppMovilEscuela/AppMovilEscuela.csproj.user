@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
-    <SelectedDevice>Samsung SM-A207M</SelectedDevice>
-    <ActiveDebugProfile>Samsung SM-A207M</ActiveDebugProfile>
+    <SelectedDevice>Pixel_2_API_24</SelectedDevice>
+    <ActiveDebugProfile>Pixel_2_API_24</ActiveDebugProfile>
     <DefaultDevice>Pixel_2_API_24</DefaultDevice>
-    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredDevice>Nexus 7 2013</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

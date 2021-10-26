@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
+using System.Json;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,25 +15,29 @@ namespace ControlEscuela
 {
     public partial class ControlSintomas : System.Web.UI.Page
     {
+        public List<Sintomas> ListaSintomas;
         protected void Page_Load(object sender, EventArgs e)
         {
             Llenar();
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        protected async void btnBuscar_Click(object sender, EventArgs e)
         {
-            string Fecha, Sintomas, Asiste, Matricula;
+            string Fecha, Matricula;
             var MostrarSintomas = new ServicioWeb.ServicioWebEscuela();
             var Conjunto = new DataSet();
             try
             {
                 Fecha = txtFecha.Text;
-                //Sintomas = cmbSintomas.SelectedValue.ToString();
-                //Asiste = cmbAsistenacia.SelectedValue.ToString();
+               
                 Matricula = txtMatricula.Text;
-                
-                Conjunto = MostrarSintomas.MostrarSintomas(Fecha, null, null, Matricula);
-                dvgSintomas.DataSource = Conjunto.Tables["Sintomas"];
+
+                var API = "https://api-restescuelacovid.azurewebsites.net//Principal/MostrarSintomas?Fecha="+
+                    Fecha+"&Sintomas=&Asiste=&Matricula="+Matricula+"";
+                JsonValue json = await Datos(API);
+                Transform(json);
+                dvgSintomas.AutoGenerateColumns = true;
+                dvgSintomas.DataSource = ListaSintomas;
                 dvgSintomas.DataBind();
             }
             catch (Exception)
@@ -37,14 +45,16 @@ namespace ControlEscuela
                 lblMensaje.Text = "Error al mostrar Los datos";
             }
         }
-        public void Llenar()
+        public async void Llenar()
         {
-            var MostrarSintomas = new ServicioWeb.ServicioWebEscuela();
-            var Conjunto = new DataSet();
+            
             try
             {
-                Conjunto = MostrarSintomas.MostrarSintomas(null,null,null,null);
-                dvgSintomas.DataSource = Conjunto.Tables["Sintomas"];
+                var API = "https://api-restescuelacovid.azurewebsites.net//Principal/MostrarSintomas?Fecha=&Sintomas=&Asiste=&Matricula=";
+                JsonValue json = await Datos(API);
+                Transform(json);
+                dvgSintomas.AutoGenerateColumns = true;
+                dvgSintomas.DataSource = ListaSintomas;
                 dvgSintomas.DataBind();
             }
             catch (Exception)
@@ -53,24 +63,45 @@ namespace ControlEscuela
             }
         }
 
-        protected void btnAlumnos_Click(object sender, EventArgs e)
+        public async Task<JsonValue> Datos(string API)
         {
-            Response.Redirect("ControlAlumnos.aspx");
+            var request = (HttpWebRequest)WebRequest.Create(new Uri(API));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+                using (Stream stream = response.GetResponseStream())
+                {
+                    var jsondoc = await Task.Run(() => JsonValue.Load(stream));
+                    return jsondoc;
+                }
+            }
         }
 
-        protected void BtnPadres_Click(object sender, EventArgs e)
+        public void Transform(JsonValue json)
         {
-            Response.Redirect("ControlUsuarios.aspx");
-        }
+            try
+            {
+                ListaSintomas = new List<Sintomas>();
+                for (int i = 0; i < json.Count; i++)
+                {
+                    var Resultados = json[i];
+                    Sintomas s = new Sintomas();
+                    s.Id = Resultados["id"];
+                    s.Fecha = Resultados["fecha"];
+                    s.Alumno = Resultados["alumno"];
+                    s.Temperatura = Resultados["temperatura"];
+                    s.PresentaSintomas = Resultados["presentaSintomas"];
+                    s.Observaciones = Resultados["observaciones"];
+                    s.Asistencia = Resultados["asistencia"];
+                    ListaSintomas.Add(s);
 
-        protected void btnSintomas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlSintomas.aspx");
-        }
-
-        protected void btnVolver_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MenuPrincipal.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                lblMensaje.Text = "Error al cargar los datos";
+            }
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj": {}
+    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj": {
+    "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
         "projectName": "API-REST_EscuelaCovid",
-        "projectPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
+        "projectPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
         "packagesPath": "C:\\Users\\Ivan Reyes Ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\obj\\",
+        "outputPath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",

@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,7 @@ namespace AppMovilEscuela
         public int Edad { get; set; }
         public int FkIdUsuario { get; set; }
         public string PadreDeFamilia { get; set; }
+        
+       
     }
 }

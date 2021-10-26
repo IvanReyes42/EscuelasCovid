@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cacaTnuA2SYG1nME4enUKpZQqSYJJzJzFoeAbPR2oXIPebmeRUgJu3nGKrPFJNAO4BFWFvqqA2VqoP8rrHqRdQ==",
+  "dgSpecHash": "cbfmdFOj1yidI5FV2Kv9u17gluLFNmr0lFeOagATkBInBBcc7TCztnMbo1qCXWEqwBC03DS+dgjoWVDWwrtguQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
+  "projectFilePath": "C:\\Users\\Ivan Reyes Ortega\\Desktop\\ProyectosAguilar\\escuelascovid\\ExamenParcial1\\API-REST_EscuelaCovid\\API-REST_EscuelaCovid.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan Reyes Ortega\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Ivan Reyes Ortega\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

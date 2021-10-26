@@ -52,7 +52,11 @@ namespace AppMovilEscuela
                     WebResponse response = request.GetResponse();
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     string responseText = reader.ReadToEnd();
-                    Toast.MakeText(this, responseText.ToString(), ToastLength.Long).Show();
+                    //Toast.MakeText(this, responseText.ToString(), ToastLength.Long).Show();
+                    if(responseText.ToString().Equals("Almacenado en SQL server desde .Net Core 5"))
+                        Toast.MakeText(this, "Hijo Registrado Correctamente", ToastLength.Long).Show();
+                    else
+                        Toast.MakeText(this, "Error al registrar los datos", ToastLength.Long).Show();
 
                 }
                 catch (Exception)

@@ -14,19 +14,6 @@ namespace ControlEscuela
             ImgPortada.ImageUrl = "https://www.fda.gov/files/Final%20art%20031921_SPANISH.png";
         }
 
-        protected void btnAlumnos_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlAlumnos.aspx");
-        }
-
-        protected void BtnPadres_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlUsuarios.aspx");
-        }
-
-        protected void btnSintomas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlSintomas.aspx");
-        }
+        
     }
 }

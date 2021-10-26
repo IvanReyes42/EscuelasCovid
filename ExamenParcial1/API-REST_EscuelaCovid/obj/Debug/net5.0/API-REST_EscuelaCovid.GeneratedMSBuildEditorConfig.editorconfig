@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = API_REST_EscuelaCovid
-build_property.ProjectDir = C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\ExamenParcial1\API-REST_EscuelaCovid\
+build_property.ProjectDir = C:\Users\Ivan Reyes Ortega\Desktop\ProyectosAguilar\escuelascovid\ExamenParcial1\API-REST_EscuelaCovid\

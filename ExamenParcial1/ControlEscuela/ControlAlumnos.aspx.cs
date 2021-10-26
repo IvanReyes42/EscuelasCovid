@@ -2,7 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
+using System.Json;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,21 +16,31 @@ namespace ControlEscuela
 {
     public partial class ControlAlumnos : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public List<Alumnos> ListaAlumnos;
+        protected  void Page_Load(object sender, EventArgs e)
         {
             Llenar();
         }
+        public ControlAlumnos()
+        {
+           
+        }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        protected async void btnBuscar_Click(object sender, EventArgs e)
         {
             string Matricula;
-            var BuscarAlumno = new ServicioWeb.ServicioWebEscuela();
-            var Conjunto = new DataSet();
+           
+            
             try
             {
                 Matricula = txtMatricula.Text;
-                Conjunto = BuscarAlumno.BuscarAlumnos(Matricula);
-                dvgAlumnos.DataSource = Conjunto.Tables["Alumnos"];
+                
+                var API = "https://api-restescuelacovid.azurewebsites.net//Principal/BuscarAlumnos?Matricula="+Matricula+"";
+                JsonValue json = await Datos(API);
+                Transform(json);
+
+                dvgAlumnos.AutoGenerateColumns = true;
+                dvgAlumnos.DataSource = ListaAlumnos;
                 dvgAlumnos.DataBind();
             }
             catch (Exception)
@@ -35,14 +49,17 @@ namespace ControlEscuela
                 throw;
             }
         }
-        public void Llenar()
+        public async void Llenar()
         {
-            var MostrarAlumnos = new ServicioWeb.ServicioWebEscuela();
-            var Conjunto = new DataSet();
+            
             try
             {
-                Conjunto = MostrarAlumnos.MostrarAlumnos();
-                dvgAlumnos.DataSource = Conjunto.Tables["Alumnos"];
+                var API = "https://api-restescuelacovid.azurewebsites.net//Principal/MostrarAlumnos";
+                JsonValue json = await Datos(API);
+                Transform(json);
+
+                dvgAlumnos.AutoGenerateColumns = true;
+                dvgAlumnos.DataSource = ListaAlumnos;
                 dvgAlumnos.DataBind();
             }
             catch (Exception)
@@ -51,24 +68,46 @@ namespace ControlEscuela
             }
         }
 
-        protected void btnAlumnos_Click(object sender, EventArgs e)
+        public async Task<JsonValue> Datos(string API)
         {
-            Response.Redirect("ControlAlumnos.aspx");
+            var request = (HttpWebRequest)WebRequest.Create(new Uri(API));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+                using (Stream stream = response.GetResponseStream())
+                {
+                    var jsondoc = await Task.Run(() => JsonValue.Load(stream));
+                    return jsondoc;
+                }
+            }
+        }
+        public void Transform(JsonValue json)
+        {
+            try
+            {
+                ListaAlumnos = new List<Alumnos>();
+                for (int i = 0; i < json.Count; i++)
+                {
+                    var Resultados = json[i];
+                    Alumnos a = new Alumnos();
+                    a.Matricula = Resultados["matricula"];
+                    a.Nombre = Resultados["nombre"];
+                    a.ApellidoPaterno = Resultados["apellidoPaterno"];
+                    a.ApellidoMaterno = Resultados["apellidoMaterno"];
+                    a.Grado = Resultados["grado"];
+                    a.Grupo = Resultados["grupo"];
+                    a.Edad = Resultados["edad"];
+                    a.PadreDeFamilia = Resultados["padreDeFamilia"];
+                    ListaAlumnos.Add(a);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al cargar los datos";
+            }
         }
 
-        protected void BtnPadres_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlUsuarios.aspx");
-        }
-
-        protected void btnSintomas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ControlSintomas.aspx");
-        }
-
-        protected void btnVolver_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MenuPrincipal.aspx");
-        }
     }
 }

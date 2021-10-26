@@ -20,26 +20,26 @@
 <body>
     <form id="form1" runat="server">
         <div class="auto-style1">
-            <h1>Bienvendio<br />
+            <h1>Bienvenido<br />
             Control de Sistemas Covid Escuelas</h1>
         </div>
         
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/MenuPrincipal.aspx">Inicio</a>
+        <div class="container" style="color:white;">
+            <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #5D7B9D;">
+  <a class="navbar-brand" href="/MenuPrincipal.aspx" style="color:white;">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/ControlAlumnos.aspx" >Alumnos</a>
+        <a class="nav-link" href="/ControlAlumnos.aspx" style="color:white;">Alumnos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ControlUsuarios.aspx">Padres de Familia</a>
+        <a class="nav-link" href="/ControlUsuarios.aspx" style="color:white;">Padres de Familia</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ControlSintomas.aspx">Sintomas</a>
+        <a class="nav-link" href="/ControlSintomas.aspx" style="color:white;">Sintomas</a>
       </li>
     </ul>
   </div>

@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Json, Version=2.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Json.4.7.1\lib\net461\System.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -84,6 +87,7 @@
     <None Include="Web References\ServicioWeb\ServicioWebEscuela.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos.cs" />
     <Compile Include="ControlAlumnos.aspx.cs">
       <DependentUpon>ControlAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +122,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Sintomas.cs" />
+    <Compile Include="Usuarios.cs" />
     <Compile Include="Web References\ServicioWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

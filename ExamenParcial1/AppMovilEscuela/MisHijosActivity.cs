@@ -33,7 +33,7 @@ namespace AppMovilEscuela
             conjunto = WS.MostrarHijos(MainActivity.Id);*/
             var API = "https://api-restescuelacovid.azurewebsites.net//Principal/MostrarHijos?id="+MainActivity.Id;
             JsonValue json = await Datos(API);
-            Transform(json); ;
+            Transform(json); 
 
             string Hijos = "";
             foreach (var item in ListaAlumnos)
