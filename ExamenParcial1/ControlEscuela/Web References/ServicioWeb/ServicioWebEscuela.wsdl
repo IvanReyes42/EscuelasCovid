@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GuardarUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarUsuariosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarUsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarrUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarrUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarrUsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarAlumnos">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAlumnos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Matricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarSintomas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sintomas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Asiste" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Matricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarSintomasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarSintomasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarHijos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarHijosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarHijosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Grado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Grupo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarAlumnoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarSintomas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FkAlumno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="temp" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sintomas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Asistenacia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarSintomasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarSintomasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreAlumnos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Fkusuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombreAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GuardarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="GuardarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="MostrarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarrUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarrUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="BuscarrUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarrUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="MostrarAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarSintomasSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarSintomas" />
+  </wsdl:message>
+  <wsdl:message name="MostrarSintomasSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarSintomasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarHijosSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarHijos" />
+  </wsdl:message>
+  <wsdl:message name="MostrarHijosSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarHijosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="GuardarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarSintomasSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarSintomas" />
+  </wsdl:message>
+  <wsdl:message name="GuardarSintomasSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarSintomasResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="NombreAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:NombreAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="NombreAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:NombreAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioWebEscuelaSoap">
+    <wsdl:operation name="GuardarUsuarios">
+      <wsdl:input message="tns:GuardarUsuariosSoapIn" />
+      <wsdl:output message="tns:GuardarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarUsuarios">
+      <wsdl:input message="tns:MostrarUsuariosSoapIn" />
+      <wsdl:output message="tns:MostrarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarrUsuarios">
+      <wsdl:input message="tns:BuscarrUsuariosSoapIn" />
+      <wsdl:output message="tns:BuscarrUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarAlumnos">
+      <wsdl:input message="tns:MostrarAlumnosSoapIn" />
+      <wsdl:output message="tns:MostrarAlumnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumnos">
+      <wsdl:input message="tns:BuscarAlumnosSoapIn" />
+      <wsdl:output message="tns:BuscarAlumnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarSintomas">
+      <wsdl:input message="tns:MostrarSintomasSoapIn" />
+      <wsdl:output message="tns:MostrarSintomasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarHijos">
+      <wsdl:input message="tns:MostrarHijosSoapIn" />
+      <wsdl:output message="tns:MostrarHijosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarAlumno">
+      <wsdl:input message="tns:GuardarAlumnoSoapIn" />
+      <wsdl:output message="tns:GuardarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSintomas">
+      <wsdl:input message="tns:GuardarSintomasSoapIn" />
+      <wsdl:output message="tns:GuardarSintomasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NombreAlumnos">
+      <wsdl:input message="tns:NombreAlumnosSoapIn" />
+      <wsdl:output message="tns:NombreAlumnosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioWebEscuelaSoap" type="tns:ServicioWebEscuelaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GuardarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/GuardarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/MostrarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarrUsuarios">
+      <soap:operation soapAction="http://tempuri.org/BuscarrUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarAlumnos">
+      <soap:operation soapAction="http://tempuri.org/MostrarAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumnos">
+      <soap:operation soapAction="http://tempuri.org/BuscarAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarSintomas">
+      <soap:operation soapAction="http://tempuri.org/MostrarSintomas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarHijos">
+      <soap:operation soapAction="http://tempuri.org/MostrarHijos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarAlumno">
+      <soap:operation soapAction="http://tempuri.org/GuardarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSintomas">
+      <soap:operation soapAction="http://tempuri.org/GuardarSintomas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreAlumnos">
+      <soap:operation soapAction="http://tempuri.org/NombreAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioWebEscuelaSoap12" type="tns:ServicioWebEscuelaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GuardarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/GuardarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/MostrarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarrUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/BuscarrUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/MostrarAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarSintomas">
+      <soap12:operation soapAction="http://tempuri.org/MostrarSintomas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarHijos">
+      <soap12:operation soapAction="http://tempuri.org/MostrarHijos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/GuardarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSintomas">
+      <soap12:operation soapAction="http://tempuri.org/GuardarSintomas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/NombreAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioWebEscuela">
+    <wsdl:port name="ServicioWebEscuelaSoap" binding="tns:ServicioWebEscuelaSoap">
+      <soap:address location="http://192.168.0.12:82/ServicioWebEscuela.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioWebEscuelaSoap12" binding="tns:ServicioWebEscuelaSoap12">
+      <soap12:address location="http://192.168.0.12:82/ServicioWebEscuela.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
